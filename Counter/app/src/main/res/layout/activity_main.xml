@@ -18,44 +18,45 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/times"
         android:layout_width="210dp"
         android:layout_height="155dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="140dp"
-        android:text="TextView"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="120dp"
+        android:text="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/times"
         android:layout_width="228dp"
         android:layout_height="94dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="80dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="Name"
+        android:hint="最高步數"
+        android:inputType="number"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="584dp"
-        android:text="Button"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="576dp"
+        android:text="記數"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/init"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="664dp"
-        android:layout_marginEnd="216dp"
-        android:text="Button"
+        android:layout_marginTop="652dp"
+        android:layout_marginEnd="152dp"
+        android:text="歸零"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
