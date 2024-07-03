@@ -23,6 +23,8 @@
         android:layout_height="155dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="120dp"
+        android:hint="輸入上限"
+        android:inputType="number"
         android:text="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,8 +36,8 @@
         android:layout_marginTop="436dp"
         android:layout_marginEnd="80dp"
         android:ems="10"
-        android:hint="最高步數"
         android:inputType="number"
+        android:text="0"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="168dp"
         android:layout_marginTop="576dp"
-        android:text="記數"
+        android:onClick="Count"
+        android:text="計數"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="652dp"
         android:layout_marginEnd="152dp"
+        android:onClick="Init"
         android:text="歸零"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
