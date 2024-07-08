@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buttonAdd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="324dp"
+        android:layout_height="202dp"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <TextView
+        android:id="@+id/editTextNumber1"
+        android:layout_width="364dp"
+        android:layout_height="241dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="88dp"
+        android:inputType="numberDecimal"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextNumber2"
+        android:layout_width="369dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="436dp"
+        android:inputType="numberDecimal"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="198dp"
+        android:layout_height="133dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="736dp"
+        android:onClick="+"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubtract"
+        android:layout_width="149dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="748dp"
+        android:onClick="-"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMultiply"
+        android:layout_width="194dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="400dp"
+        android:layout_marginTop="748dp"
+        android:onClick="*"
+        android:text="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDivide"
+        android:layout_width="194dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="584dp"
+        android:layout_marginTop="740dp"
+        android:onClick="/"
+        android:text="/"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEquals"
+        android:layout_width="147dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="788dp"
+        android:layout_marginTop="752dp"
+        android:onClick="="
+        android:text="="
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textViewResult"
+        android:layout_width="431dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="1040dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Result:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
