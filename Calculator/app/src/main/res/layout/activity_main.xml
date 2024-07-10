@@ -1,110 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/buttonAdd"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="324dp"
-        android:layout_height="202dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948" />
-
-    <TextView
-        android:id="@+id/editTextNumber1"
-        android:layout_width="364dp"
-        android:layout_height="241dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="88dp"
-        android:inputType="numberDecimal"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/editTextNumber2"
-        android:layout_width="369dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="436dp"
-        android:inputType="numberDecimal"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="198dp"
-        android:layout_height="133dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="736dp"
-        android:onClick="+"
-        android:text="+"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonSubtract"
-        android:layout_width="149dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="748dp"
-        android:onClick="-"
-        android:text="-"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonMultiply"
-        android:layout_width="194dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="400dp"
-        android:layout_marginTop="748dp"
-        android:onClick="*"
-        android:text="*"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonDivide"
-        android:layout_width="194dp"
-        android:layout_height="128dp"
-        android:layout_marginStart="584dp"
-        android:layout_marginTop="740dp"
-        android:onClick="/"
-        android:text="/"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonEquals"
-        android:layout_width="147dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="788dp"
-        android:layout_marginTop="752dp"
-        android:onClick="="
-        android:text="="
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    <!-- 第一個輸入框 -->
     <EditText
-        android:id="@+id/textViewResult"
-        android:layout_width="431dp"
-        android:layout_height="115dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="1040dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Result:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/et_first_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first number"
+        android:inputType="numberDecimal" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 第二個輸入框 -->
+    <EditText
+        android:id="@+id/et_second_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second number"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="16dp" />
+    <!-- numberDecimal 是 Android 的 inputType 屬性的一個值，
+    用於指定 EditText 只允許用戶輸入數字和小數點。
+    這個屬性確保輸入框只接受有效的數字格式輸入。
+    -->
+
+    <!-- 操作按鈕 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center">
+
+        <!-- 加法按鈕 -->
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="36dp" />
+
+        <!-- 減法按鈕 -->
+        <Button
+            android:id="@+id/btn_subtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="36dp"
+            android:layout_marginLeft="8dp"/>
+
+        <!-- 乘法按鈕 -->
+        <Button
+            android:id="@+id/btn_multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textSize="36dp"
+            android:layout_marginLeft="8dp"/>
+
+        <!-- 除法按鈕 -->
+        <Button
+            android:id="@+id/btn_divide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="36dp"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+    <!-- 顯示結果的區域 -->
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
