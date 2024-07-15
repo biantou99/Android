@@ -1,6 +1,8 @@
 package com.example.activitypractice;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,19 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    public void SentFruitName(View view){
+        String fruit;
+        if(view.getId() == R.id.buttonA) {
+            fruit = "Apple";
+        }else {
+            fruit = "Banana";
+        }
+        Intent intent = new Intent(this, SecondActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("FRUIT", fruit);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

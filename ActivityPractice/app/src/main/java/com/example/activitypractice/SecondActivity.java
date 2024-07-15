@@ -1,9 +1,16 @@
 package com.example.activitypractice;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -21,4 +28,22 @@ public class SecondActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    Bundle bundle = this.getIntent().getExtras();
+    if(bundle != null){
+
+        String fruit = String.format(bundle.getString("FRUIT"));
+        TextView name = (TextView) findViewById(R.id.Name);
+        name.setText(fruit);
+        ImageView img = (ImageView) findViewById(R.id.image);
+        String filename = fruit.toLowerCase();
+        int imgId = getResources().getIdentifier(filename, "drawable", getPackageName());
+        Drawable drawableImg = ContextCompat.getDrawable(this, imgId);
+        img.setImageDrawable(drawableImg);
+
+    }
 }
+
+    public void CloseActivity(View view){
+        finish();
+    }
