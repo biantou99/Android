@@ -3,10 +3,12 @@ package com.example.bmi;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private double bmi;
+    private ActivityResultLauncher<Intent> intentActivityResultLauncher;
+    private TextView
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +39,21 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult o) {
                         //寫另一個Activity回傳後，得到回傳的資料的做法
-                        if(result.getData() !=null && result.getResult)
+                        if(o.getData() !=null && o.getResultCode() == ActivityResult.RESULT_OK){
+                            bmi = o.getData().getDoubleExtra(BMI,-1);
                     }
                 }
     }
         )
     }
-    public void GotoBMICalculate(View view){
+    public void GotoCalBMI(View view){
         Intent intent = new Intent(this,CalBMIActivity.class);
+
+        intentActivityResultLauncher.launch(intent);
+
+    }
+    public void updateUI(){
+        TextView tv_result = (TextView) findViewById(R.id.thin_value);
 
     }
 }
