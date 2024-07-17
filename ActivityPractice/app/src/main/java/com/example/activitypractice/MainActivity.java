@@ -1,4 +1,4 @@
-package com.example.activitypractice;
+package com.example.activitypractice2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.activitypractice.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,16 +27,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SentFruitName(View view){
+        // 按下按鈕Ａ，傳送"Apple",按下按鈕Ｂ，傳送"Banana"
         String fruit;
-        if(view.getId() == R.id.buttonA) {
+        if(view.getId() == R.id.buttonA){
             fruit = "Apple";
-        }else {
+        }else{
             fruit = "Banana";
         }
-        Intent intent = new Intent(this, SecondActivity.class);
+
+        Intent intent = new Intent(this, com.example.activitypractice2.FruitActivity.class);
+
+        // 設定一個bundle來放資料
         Bundle bundle = new Bundle();
         bundle.putString("FRUIT", fruit);
+
+        // 利用intent攜帶bundle的資料
         intent.putExtras(bundle);
         startActivity(intent);
+
     }
 }

@@ -3,40 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondActivity">
+    tools:context=".CalBMIActivity">
 
     <LinearLayout
         android:layout_width="391dp"
         android:layout_height="783dp"
-        android:gravity="center|top"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:ems="10"
+            android:inputType="text"
+            android:text="輸入體重(公斤)" />
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_height"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:ems="10"
+            android:inputType="text"
+            android:text="輸入身高(公尺)" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="計算" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
