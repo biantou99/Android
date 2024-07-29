@@ -1,9 +1,6 @@
-package com.example.implicitintent;
+package com.example.activitylifecycle;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,21 +21,4 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    public void FcuIndexPage(View view){
-        Intent i = new Intent();
-        i.setAction(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("https://www.fcu.edu.tw/"));
-        startActivity(i);
-    }
-    public void GotoFCU(View view){
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("geo:24.179440380893276, 120.64858563645726"));
-        startActivity(i);
-    }
-    public void clickDIAL(View view){
-        Intent i = new Intent();
-        i.setAction(Intent.ACTION_DIAL);
-        startActivity(i);
-    }
-    public void
 }
