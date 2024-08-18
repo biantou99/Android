@@ -17,31 +17,39 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.midtermtry.R;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class TodoActivity extends AppCompatActivity {
-    String title, content, action;
-    int index = 0;
+public class MaterialActivity extends AppCompatActivity {
+    String materialName, materialNote, materialImageUrl, action;
+    int quantity = 0, index = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_todo);
+        setContentView(R.layout.activity_material);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         Bundle bundle = this.getIntent().getExtras();
         action = bundle.getString("ACTION");
+
         if(bundle != null && action.equals("edit")){
-            title = String.format(bundle.getString("TITLE"));
-            content = String.format(bundle.getString("CONTENT"));
+            materialName = bundle.getString("MATERIAL_NAME");
+            quantity = bundle.getInt("QUANTITY");
+            materialImageUrl = bundle.getString("MATERIAL_IMAGE_URL");
+            materialNote = bundle.getString("MATERIAL_NOTE");
             index = bundle.getInt("INDEX");
 
-            EditText tvTitle = (EditText) findViewById(R.id.newTodoTitle);
-            tvTitle.setText(title);
-            TextInputLayout textInputLayout = (TextInputLayout)findViewById(R.id.contentTextInputLayout);
-            textInputLayout.getEditText().setText(content);
+            EditText etMaterialName = findViewById(R.id.materialName);
+            etMaterialName.setText(materialName);
+            EditText etQuantity = findViewById(R.id.quantity);
+            etQuantity.setText(String.valueOf(quantity));
+            EditText etMaterialImageUrl = findViewById(R.id.materialImageUrl);
+            etMaterialImageUrl.setText(materialImageUrl);
+            TextInputLayout textInputLayout = findViewById(R.id.noteTextInputLayout);
+            textInputLayout.getEditText().setText(materialNote);
         }
     }
 
@@ -59,17 +67,21 @@ public class TodoActivity extends AppCompatActivity {
         dialog.setPositiveButton("確定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                String title = ((EditText)findViewById(R.id.newTodoTitle)).getText().toString();
-                TextInputLayout textInputLayout = (TextInputLayout)findViewById(R.id.contentTextInputLayout);
-                String content = String.valueOf(textInputLayout.getEditText().getText());
+                String materialName = ((EditText)findViewById(R.id.materialName)).getText().toString();
+                int quantity = Integer.parseInt(((EditText)findViewById(R.id.quantity)).getText().toString());
+                String materialImageUrl = ((EditText)findViewById(R.id.materialImageUrl)).getText().toString();
+                TextInputLayout textInputLayout = findViewById(R.id.noteTextInputLayout);
+                String materialNote = textInputLayout.getEditText().getText().toString();
 
                 Intent intent = new Intent();
-                intent.putExtra("TITLE", title);
-                intent.putExtra("CONTENT", content);
-
+                intent.putExtra("MATERIAL_NAME", materialName);
+                intent.putExtra("QUANTITY", quantity);
+                intent.putExtra("MATERIAL_IMAGE_URL", materialImageUrl);
+                intent.putExtra("MATERIAL_NOTE", materialNote);
                 intent.putExtra("ACTION", action);
+
                 if(action.equals("edit")){
-                    intent.putExtra("INDEX", String.valueOf(index));
+                    intent.putExtra("INDEX", index);
                 }
                 setResult(Activity.RESULT_OK, intent);
                 finish();

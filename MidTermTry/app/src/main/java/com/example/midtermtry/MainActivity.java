@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if(todoArrayList.isEmpty()){
             Log.d("Test", "todoArrayList empty.");
             ArrayList<String> empty = new ArrayList<String>();
-            empty.add("還沒有待辦事項，趕緊去新增！");
+            empty.add("目前無任何料件！");
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, empty);
             todoListView.setAdapter(adapter);
         }else{
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if(todoArrayList.isEmpty()){
             Log.d("Test", "todoArrayList empty.");
             ArrayList<String> empty = new ArrayList<String>();
-            empty.add("還沒有待辦事項，趕緊去新增！");
+            empty.add("目前無任何料件！");
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, empty);
             todoListView.setAdapter(adapter);
         }else{
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void newButtonClick(View view){
-        Intent intent = new Intent(this, com.example.midtermtry.TodoActivity.class);
+        Intent intent = new Intent(this, com.example.midtermtry.MaterialActivity.class);
         // 設定一個bundle來放資料
         Bundle bundle = new Bundle();
         bundle.putString("ACTION", "new");
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         String title = item.getTitle();
         String content = item.getContent();
 
-        Intent intent = new Intent(this, com.example.midtermtry.TodoActivity.class);
+        Intent intent = new Intent(this, com.example.midtermtry.MaterialActivity.class);
         // 設定一個bundle來放資料
         Bundle bundle = new Bundle();
         bundle.putString("ACTION", "edit");
