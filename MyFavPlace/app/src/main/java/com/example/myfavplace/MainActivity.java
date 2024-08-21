@@ -1,4 +1,4 @@
-package com.example.myfavoriteplace;
+package com.example.myfavplace;
 
 import android.Manifest;
 import android.content.Intent;
@@ -40,7 +40,7 @@ public class MainActivity extends ComponentActivity {
 
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
         int[] images = {R.drawable.pm1, R.drawable.pm2, R.drawable.pm3, R.drawable.pm5, R.drawable.pm4}; //圖片
-        com.example.myfavoriteplace.ImageSliderAdapter adapter = new com.example.myfavoriteplace.ImageSliderAdapter(this, images);
+        com.example.myfavplace.ImageSliderAdapter adapter = new com.example.myfavplace.ImageSliderAdapter(this, images);
         viewPager2.setAdapter(adapter);
 
         FloatingActionButton floatingButton = findViewById(R.id.floatingButton);

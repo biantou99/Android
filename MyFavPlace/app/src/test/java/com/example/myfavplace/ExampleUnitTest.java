@@ -1,4 +1,4 @@
-package com.example.myfavplace;
+package com.example.MyFavPlace;
 
 import org.junit.Test;
 
